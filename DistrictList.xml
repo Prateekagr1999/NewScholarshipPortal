@@ -1,0 +1,78 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<DistrictList>
+ <District><dcode>15</dcode><dname>Agra</dname></District>
+<District><dcode>12</dcode><dname>Aligarh</dname></District>
+<District><dcode>45</dcode><dname>Prayagraj</dname></District>
+<District><dcode>48</dcode><dname>Ambedkar Ngr.</dname></District>
+<District><dcode>32</dcode><dname>Auraiya </dname></District>
+<District><dcode>61</dcode><dname>Azamgarh</dname></District>
+<District><dcode>08</dcode><dname>Baghpat </dname></District>
+<District><dcode>50</dcode><dname>Bahraich</dname></District>
+<District><dcode>63</dcode><dname>Ballia</dname></District>
+<District><dcode>52</dcode><dname>Balrampur </dname></District>
+<District><dcode>40</dcode><dname>Banda</dname></District>
+<District><dcode>46</dcode><dname>Barabanki</dname></District>
+<District><dcode>20</dcode><dname>Bareilly</dname></District>
+<District><dcode>55</dcode><dname>Basti</dname></District>
+<District><dcode>03</dcode><dname>Bijnor</dname></District>
+<District><dcode>19</dcode><dname>Budaun</dname></District>
+<District><dcode>11</dcode><dname>Bulandshahr</dname></District>
+<District><dcode>66</dcode><dname>Chandauli </dname></District>
+<District><dcode>41</dcode><dname>Chitrakoot </dname></District>
+<District><dcode>72</dcode><dname>CSM Nagar</dname></District>
+<District><dcode>60</dcode><dname>Deoria</dname></District>
+<District><dcode>17</dcode><dname>Etah</dname></District>
+<District><dcode>31</dcode><dname>Etawah</dname></District>
+<District><dcode>47</dcode><dname>Ayodhya</dname></District>
+<District><dcode>29</dcode><dname>Farrukhabad</dname></District>
+<District><dcode>42</dcode><dname>Fatehpur</dname></District>
+<District><dcode>16</dcode><dname>Firozabad</dname></District>
+<District><dcode>10</dcode><dname>GB Nagar</dname></District>
+<District><dcode>09</dcode><dname>Ghaziabad</dname></District>
+<District><dcode>65</dcode><dname>Ghazipur</dname></District>
+<District><dcode>53</dcode><dname>Gonda</dname></District>
+<District><dcode>58</dcode><dname>Gorakhpur</dname></District>
+<District><dcode>38</dcode><dname>Hamirpur</dname></District>
+<District><dcode>74</dcode><dname>Hapur</dname></District>
+<District><dcode>25</dcode><dname>Hardoi</dname></District>
+<District><dcode>13</dcode><dname>Hathras </dname></District>
+<District><dcode>35</dcode><dname>Jalaun</dname></District>
+<District><dcode>64</dcode><dname>Jaunpur</dname></District>
+<District><dcode>36</dcode><dname>Jhansi</dname></District>
+<District><dcode>06</dcode><dname>JP Nagar</dname></District>
+<District><dcode>30</dcode><dname>Kannauj </dname></District>
+<District><dcode>33</dcode><dname>Kanpur Dehat</dname></District>
+<District><dcode>34</dcode><dname>Kanpur Nagar</dname></District>
+<District><dcode>71</dcode><dname>KanshiRam Nagar</dname></District>
+<District><dcode>44</dcode><dname>Kaushambi </dname></District>
+<District><dcode>23</dcode><dname>Kheri</dname></District>
+<District><dcode>59</dcode><dname>Kushinagar </dname></District>
+<District><dcode>37</dcode><dname>Lalitpur</dname></District>
+<District><dcode>27</dcode><dname>Lucknow</dname></District>
+<District><dcode>57</dcode><dname>Maharajganj</dname></District>
+<District><dcode>39</dcode><dname>Mahoba </dname></District>
+<District><dcode>18</dcode><dname>Mainpuri</dname></District>
+<District><dcode>14</dcode><dname>Mathura</dname></District>
+<District><dcode>62</dcode><dname>Mau</dname></District>
+<District><dcode>07</dcode><dname>Meerut</dname></District>
+<District><dcode>69</dcode><dname>Mirzapur</dname></District>
+<District><dcode>04</dcode><dname>Moradabad</dname></District>
+<District><dcode>02</dcode><dname>Muzaffarnagar</dname></District>
+<District><dcode>21</dcode><dname>Pilibhit</dname></District>
+<District><dcode>43</dcode><dname>Pratapgarh</dname></District>
+<District><dcode>28</dcode><dname>Rae Bareli</dname></District>
+<District><dcode>05</dcode><dname>Rampur</dname></District>
+<District><dcode>01</dcode><dname>Saharanpur</dname></District>
+<District><dcode>75</dcode><dname>Sambhal</dname></District>
+<District><dcode>22</dcode><dname>Shahjahanpur</dname></District>
+<District><dcode>73</dcode><dname>Shamli</dname></District>
+<District><dcode>51</dcode><dname>Shrawasti </dname></District>
+<District><dcode>54</dcode><dname>Siddharthnagar</dname></District>
+<District><dcode>24</dcode><dname>Sitapur</dname></District>
+<District><dcode>56</dcode><dname>SK Nagar</dname></District>
+<District><dcode>70</dcode><dname>Sonbhadra</dname></District>
+<District><dcode>68</dcode><dname>SR Nagar</dname></District>
+<District><dcode>49</dcode><dname>Sultanpur</dname></District>
+<District><dcode>26</dcode><dname>Unnao</dname></District>
+<District><dcode>67</dcode><dname>Varanasi</dname></District>
+</DistrictList>

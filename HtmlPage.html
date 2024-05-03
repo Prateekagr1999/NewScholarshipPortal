@@ -1,0 +1,296 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Bootstrap Example</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <style>
+        body {
+            background: lightblue;
+        }
+
+        h3 {
+            color: #fff;
+            font-size: 24px;
+            text-align: center;
+            padding-bottom: 10px;
+            font-weight: 300;
+        }
+
+        .container {
+            max-width: 970px;
+        }
+
+        div[class*='col-'] {
+            padding: 0 30px;
+        }
+
+        .wrap {
+            box-shadow: 0px 2px 2px 0px rgba(0, 0, 0, 0.14), 0px 3px 1px -2px rgba(0, 0, 0, 0.2), 0px 1px 5px 0px rgba(0, 0, 0, 0.12);
+            border-radius: 4px;
+        }
+
+        a:focus,
+        a:hover,
+        a:active {
+            outline: 0;
+            text-decoration: none;
+        }
+
+        .panel {
+            border-width: 0 0 1px 0;
+            border-style: solid;
+            border-color: #fff;
+            background: none;
+            box-shadow: none;
+        }
+
+            .panel:last-child {
+                border-bottom: none;
+            }
+
+        .panel-group > .panel:first-child .panel-heading {
+            border-radius: 4px 4px 0 0;
+        }
+
+        .panel-group .panel {
+            border-radius: 0;
+        }
+
+            .panel-group .panel + .panel {
+                margin-top: 0;
+            }
+
+        .panel-heading {
+            background: linear-gradient(to right, #4b3504, #a98b53);
+            border-radius: 0;
+            border: none;
+            color: #fff;
+            padding: 0;
+        }
+
+        .panel-title a {
+            display: block;
+            color: #fff;
+            padding: 15px;
+            position: relative;
+            font-size: 16px;
+            font-weight: 400;
+        }
+
+        .panel-body {
+            background: #fff;
+        }
+
+        .panel:last-child .panel-body {
+            border-radius: 0 0 4px 4px;
+        }
+
+        .panel:last-child .panel-heading {
+            border-radius: 0 0 4px 4px;
+            transition: border-radius 0.3s linear 0.2s;
+        }
+
+            .panel:last-child .panel-heading.active {
+                border-radius: 0;
+                transition: border-radius linear 0s;
+            }
+        /* #bs-collapse icon scale option */
+
+        .panel-heading a:before {
+            content: '\e146';
+            position: absolute;
+            font-family: 'Material Icons';
+            right: 5px;
+            top: 10px;
+            font-size: 24px;
+            transition: all 0.5s;
+            transform: scale(1);
+        }
+
+        .panel-heading.active a:before {
+            content: ' ';
+            transition: all 0.5s;
+            transform: scale(0);
+        }
+
+        #bs-collapse .panel-heading a:after {
+            content: ' ';
+            font-size: 24px;
+            position: absolute;
+            font-family: 'Material Icons';
+            right: 5px;
+            top: 10px;
+            transform: scale(0);
+            transition: all 0.5s;
+        }
+
+        #bs-collapse .panel-heading.active a:after {
+            content: '\e909';
+            transform: scale(1);
+            transition: all 0.5s;
+        }
+        /* #accordion rotate icon option */
+
+        #accordion .panel-heading a:before {
+            content: '\e316';
+            font-size: 24px;
+            position: absolute;
+            font-family: 'Material Icons';
+            right: 5px;
+            top: 10px;
+            transform: rotate(180deg);
+            transition: all 0.5s;
+        }
+
+        #accordion .panel-heading.active a:before {
+            transform: rotate(0deg);
+            transition: all 0.5s;
+        }
+
+        #exTab3 .nav-pills .active a {
+            background: #4b3504 !important;
+        }
+    </style>
+</head>
+<body>
+    <div id="exTab3" class="container">
+        <ul class="nav nav-pills" style="">
+            <li class="active">
+                <a href="#1b" data-toggle="tab">Overview</a>
+            </li>
+            <li>
+                <a href="#2b" data-toggle="tab">Using nav-pills</a>
+            </li>
+            <li>
+                <a href="#3b" data-toggle="tab">Applying clearfix</a>
+            </li>
+            <li>
+                <a href="#4b" data-toggle="tab">Background color</a>
+            </li>
+        </ul>
+
+        <div class="tab-content clearfix">
+            <div class="tab-pane active" id="1b">
+                <h3>Accordion collapse with rotating icon</h3>
+                <div class="container">
+                    <div class="col-md-12 col-sm-12">
+                        <div class="panel-group wrap" id="accordion" role="tablist" aria-multiselectable="true">
+                            <div class="panel">
+                                <div class="panel-heading" role="tab" id="headingOne">
+                                    <h4 class="panel-title">
+                                        <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                            Collapsible item #1
+                                        </a>
+                                    </h4>
+                                </div>
+                                <div id="collapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
+                                    <div class="panel-body">
+                                        Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch.
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- end of panel -->
+
+                            <div class="panel">
+                                <div class="panel-heading" role="tab" id="headingTwo">
+                                    <h4 class="panel-title">
+                                        <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                            Collapsible item #2
+                                        </a>
+                                    </h4>
+                                </div>
+                                <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
+                                    <div class="panel-body">
+                                        Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch.
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- end of panel -->
+
+                            <div class="panel">
+                                <div class="panel-heading" role="tab" id="headingThree">
+                                    <h4 class="panel-title">
+                                        <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                                            Collapsible item #3
+                                        </a>
+                                    </h4>
+                                </div>
+                                <div id="collapseThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
+                                    <div class="panel-body">
+                                        Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch.
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- end of panel -->
+
+                            <div class="panel">
+                                <div class="panel-heading" role="tab" id="headingFour">
+                                    <h4 class="panel-title">
+                                        <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+                                            Collapsible item #4
+                                        </a>
+                                    </h4>
+                                </div>
+                                <div id="collapseFour" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingFour">
+                                    <div class="panel-body">
+                                        Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch.
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- end of panel -->
+                            <div class="panel">
+                                <div class="panel-heading" role="tab" id="headingFive">
+                                    <h4 class="panel-title">
+                                        <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
+                                            Collapsible item #5
+                                        </a>
+                                    </h4>
+                                </div>
+                                <div id="collapseFive" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingFive">
+                                    <div class="panel-body">
+                                        Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch.
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- end of panel -->
+
+                        </div>
+                        <!-- end of #accordion -->
+
+                    </div>
+                    <!-- end of wrap -->
+
+                </div>
+                <!-- end of container -->
+            </div>
+            <div class="tab-pane" id="2b">
+                <h3>We use the class nav-pills instead of nav-tabs which automatically creates a background color for the tab</h3>
+            </div>
+            <div class="tab-pane" id="3b">
+                <h3>We applied clearfix to the tab-content to rid of the gap between the tab and the content</h3>
+            </div>
+            <div class="tab-pane" id="4b">
+                <h3>We use CSS to change the background color of the content to be equal to the tab</h3>
+            </div>
+        </div>
+    </div>
+    <script>
+        $(document).ready(function () {
+            $('.collapse.in').prev('.panel-heading').addClass('active');
+            $('#accordion, #bs-collapse')
+                .on('show.bs.collapse', function (a) {
+                    $(a.target).prev('.panel-heading').addClass('active');
+                })
+                .on('hide.bs.collapse', function (a) {
+                    $(a.target).prev('.panel-heading').removeClass('active');
+                });
+        });
+    </script>
+</body>
+</html>

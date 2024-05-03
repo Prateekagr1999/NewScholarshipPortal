@@ -1,0 +1,1304 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="BlocksMasterPage.master.cs" Inherits="BlocksMasterPage" %>
+
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Uttar Pradesh Scholarship Portal</title>
+    <link rel="icon" href="images/UPGov.png" type="image/x-icon">
+    <link rel="profile" href="http://gmpg.org/xfn/11">
+    <link rel="pingback" href="https://s3f1981e4bd8a0d6d8462016d2fc6276b3.s3waas.gov.in/xmlrpc.php">
+    <link rel="stylesheet" href="css/print.css" type="text/css" media="print">
+    <meta name="robots" content="max-image-preview:large">
+    <meta name="description" content="This page displays an informative text section that outlines the department major activities, benefits and setup details.">
+    <meta name="keywords" content="About, Department, About Department">
+    <link rel="stylesheet" id="wp-block-library-css" href="css/style.min.css" media="all">
+    <link href="css/hover.css" rel="stylesheet" />
+
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            overflow: hidden; /* Prevent scrolling while loading */
+        }
+
+        header, main, footer, .innerBanner {
+            filter: blur(8px); /* Apply blur effect to header, main, and footer */
+            transition: filter 0.5s ease-out; /* Add a smooth transition */
+        }
+
+        .loader-container {
+            width: 6em;
+            height: 6em;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 9999; /* Make sure it's above other content */
+            display: block; /* Initially visible */
+        }
+
+        .pl {
+            width: 100%;
+            height: 100%;
+            animation: rotate 2s linear infinite;
+        }
+
+        .pl__ring {
+            animation: ringA 2s linear infinite;
+        }
+
+        .pl__ring--a {
+            stroke: #f42f25;
+        }
+
+        .pl__ring--b {
+            animation-name: ringB;
+            stroke: #f49725;
+        }
+
+        .pl__ring--c {
+            animation-name: ringC;
+            stroke: #255ff4;
+        }
+
+        .pl__ring--d {
+            animation-name: ringD;
+            stroke: #f42582;
+        }
+
+        /* Animations */
+        @keyframes rotate {
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+
+        @keyframes ringA {
+            from, 4% {
+                stroke-dasharray: 0 660;
+                stroke-width: 20;
+                stroke-dashoffset: -330;
+            }
+
+            12% {
+                stroke-dasharray: 60 600;
+                stroke-width: 30;
+                stroke-dashoffset: -335;
+            }
+
+            32% {
+                stroke-dasharray: 60 600;
+                stroke-width: 30;
+                stroke-dashoffset: -595;
+            }
+
+            40%, 54% {
+                stroke-dasharray: 0 660;
+                stroke-width: 20;
+                stroke-dashoffset: -660;
+            }
+
+            62% {
+                stroke-dasharray: 60 600;
+                stroke-width: 30;
+                stroke-dashoffset: -665;
+            }
+
+            82% {
+                stroke-dasharray: 60 600;
+                stroke-width: 30;
+                stroke-dashoffset: -925;
+            }
+
+            90%, to {
+                stroke-dasharray: 0 660;
+                stroke-width: 20;
+                stroke-dashoffset: -990;
+            }
+        }
+
+        @keyframes ringB {
+            from, 12% {
+                stroke-dasharray: 0 220;
+                stroke-width: 20;
+                stroke-dashoffset: -110;
+            }
+
+            20% {
+                stroke-dasharray: 20 200;
+                stroke-width: 30;
+                stroke-dashoffset: -115;
+            }
+
+            40% {
+                stroke-dasharray: 20 200;
+                stroke-width: 30;
+                stroke-dashoffset: -195;
+            }
+
+            48%, 62% {
+                stroke-dasharray: 0 220;
+                stroke-width: 20;
+                stroke-dashoffset: -220;
+            }
+
+            70% {
+                stroke-dasharray: 20 200;
+                stroke-width: 30;
+                stroke-dashoffset: -225;
+            }
+
+            90% {
+                stroke-dasharray: 20 200;
+                stroke-width: 30;
+                stroke-dashoffset: -305;
+            }
+
+            98%, to {
+                stroke-dasharray: 0 220;
+                stroke-width: 20;
+                stroke-dashoffset: -330;
+            }
+        }
+
+        @keyframes ringC {
+            from {
+                stroke-dasharray: 0 440;
+                stroke-width: 20;
+                stroke-dashoffset: 0;
+            }
+
+            8% {
+                stroke-dasharray: 40 400;
+                stroke-width: 30;
+                stroke-dashoffset: -5;
+            }
+
+            28% {
+                stroke-dasharray: 40 400;
+                stroke-width: 30;
+                stroke-dashoffset: -175;
+            }
+
+            36%, 58% {
+                stroke-dasharray: 0 440;
+                stroke-width: 20;
+                stroke-dashoffset: -220;
+            }
+
+            66% {
+                stroke-dasharray: 40 400;
+                stroke-width: 30;
+                stroke-dashoffset: -225;
+            }
+
+            86% {
+                stroke-dasharray: 40 400;
+                stroke-width: 30;
+                stroke-dashoffset: -395;
+            }
+
+            94%, to {
+                stroke-dasharray: 0 440;
+                stroke-width: 20;
+                stroke-dashoffset: -440;
+            }
+        }
+
+        @keyframes ringD {
+            from, 8% {
+                stroke-dasharray: 0 440;
+                stroke-width: 20;
+                stroke-dashoffset: 0;
+            }
+
+            16% {
+                stroke-dasharray: 40 400;
+                stroke-width: 30;
+                stroke-dashoffset: -5;
+            }
+
+            36% {
+                stroke-dasharray: 40 400;
+                stroke-width: 30;
+                stroke-dashoffset: -175;
+            }
+
+            44%, 50% {
+                stroke-dasharray: 0 440;
+                stroke-width: 20;
+                stroke-dashoffset: -220;
+            }
+
+            58% {
+                stroke-dasharray: 40 400;
+                stroke-width: 30;
+                stroke-dashoffset: -225;
+            }
+
+            78% {
+                stroke-dasharray: 40 400;
+                stroke-width: 30;
+                stroke-dashoffset: -395;
+            }
+
+            86%, to {
+                stroke-dasharray: 0 440;
+                stroke-width: 20;
+                stroke-dashoffset: -440;
+            }
+        }
+    </style>
+
+    <style id="classic-theme-styles-inline-css" type="text/css">
+        /*! This file is auto-generated */
+        .wp-block-button__link {
+            color: #fff;
+            background-color: #32373c;
+            border-radius: 9999px;
+            box-shadow: none;
+            text-decoration: none;
+            padding: calc(.667em + 2px) calc(1.333em + 2px);
+            font-size: 1.125em
+        }
+
+        .wp-block-file__button {
+            background: #32373c;
+            color: #fff;
+            text-decoration: none
+        }
+    </style>
+    <style id="global-styles-inline-css" type="text/css">
+        body {
+            --wp--preset--color--black: #000000;
+            --wp--preset--color--cyan-bluish-gray: #abb8c3;
+            --wp--preset--color--white: #ffffff;
+            --wp--preset--color--pale-pink: #f78da7;
+            --wp--preset--color--vivid-red: #cf2e2e;
+            --wp--preset--color--luminous-vivid-orange: #ff6900;
+            --wp--preset--color--luminous-vivid-amber: #fcb900;
+            --wp--preset--color--light-green-cyan: #7bdcb5;
+            --wp--preset--color--vivid-green-cyan: #00d084;
+            --wp--preset--color--pale-cyan-blue: #8ed1fc;
+            --wp--preset--color--vivid-cyan-blue: #0693e3;
+            --wp--preset--color--vivid-purple: #9b51e0;
+            --wp--preset--gradient--vivid-cyan-blue-to-vivid-purple: linear-gradient(135deg,rgba(6,147,227,1) 0%,rgb(155,81,224) 100%);
+            --wp--preset--gradient--light-green-cyan-to-vivid-green-cyan: linear-gradient(135deg,rgb(122,220,180) 0%,rgb(0,208,130) 100%);
+            --wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange: linear-gradient(135deg,rgba(252,185,0,1) 0%,rgba(255,105,0,1) 100%);
+            --wp--preset--gradient--luminous-vivid-orange-to-vivid-red: linear-gradient(135deg,rgba(255,105,0,1) 0%,rgb(207,46,46) 100%);
+            --wp--preset--gradient--very-light-gray-to-cyan-bluish-gray: linear-gradient(135deg,rgb(238,238,238) 0%,rgb(169,184,195) 100%);
+            --wp--preset--gradient--cool-to-warm-spectrum: linear-gradient(135deg,rgb(74,234,220) 0%,rgb(151,120,209) 20%,rgb(207,42,186) 40%,rgb(238,44,130) 60%,rgb(251,105,98) 80%,rgb(254,248,76) 100%);
+            --wp--preset--gradient--blush-light-purple: linear-gradient(135deg,rgb(255,206,236) 0%,rgb(152,150,240) 100%);
+            --wp--preset--gradient--blush-bordeaux: linear-gradient(135deg,rgb(254,205,165) 0%,rgb(254,45,45) 50%,rgb(107,0,62) 100%);
+            --wp--preset--gradient--luminous-dusk: linear-gradient(135deg,rgb(255,203,112) 0%,rgb(199,81,192) 50%,rgb(65,88,208) 100%);
+            --wp--preset--gradient--pale-ocean: linear-gradient(135deg,rgb(255,245,203) 0%,rgb(182,227,212) 50%,rgb(51,167,181) 100%);
+            --wp--preset--gradient--electric-grass: linear-gradient(135deg,rgb(202,248,128) 0%,rgb(113,206,126) 100%);
+            --wp--preset--gradient--midnight: linear-gradient(135deg,rgb(2,3,129) 0%,rgb(40,116,252) 100%);
+            --wp--preset--font-size--small: 13px;
+            --wp--preset--font-size--medium: 20px;
+            --wp--preset--font-size--large: 36px;
+            --wp--preset--font-size--x-large: 42px;
+            --wp--preset--spacing--20: 0.44rem;
+            --wp--preset--spacing--30: 0.67rem;
+            --wp--preset--spacing--40: 1rem;
+            --wp--preset--spacing--50: 1.5rem;
+            --wp--preset--spacing--60: 2.25rem;
+            --wp--preset--spacing--70: 3.38rem;
+            --wp--preset--spacing--80: 5.06rem;
+            --wp--preset--shadow--natural: 6px 6px 9px rgba(0, 0, 0, 0.2);
+            --wp--preset--shadow--deep: 12px 12px 50px rgba(0, 0, 0, 0.4);
+            --wp--preset--shadow--sharp: 6px 6px 0px rgba(0, 0, 0, 0.2);
+            --wp--preset--shadow--outlined: 6px 6px 0px -3px rgba(255, 255, 255, 1), 6px 6px rgba(0, 0, 0, 1);
+            --wp--preset--shadow--crisp: 6px 6px 0px rgba(0, 0, 0, 1);
+        }
+
+        :where(.is-layout-flex) {
+            gap: 0.5em;
+        }
+
+        :where(.is-layout-grid) {
+            gap: 0.5em;
+        }
+
+        body .is-layout-flow > .alignleft {
+            float: left;
+            margin-inline-start: 0;
+            margin-inline-end: 2em;
+        }
+
+        body .is-layout-flow > .alignright {
+            float: right;
+            margin-inline-start: 2em;
+            margin-inline-end: 0;
+        }
+
+        body .is-layout-flow > .aligncenter {
+            margin-left: auto !important;
+            margin-right: auto !important;
+        }
+
+        body .is-layout-constrained > .alignleft {
+            float: left;
+            margin-inline-start: 0;
+            margin-inline-end: 2em;
+        }
+
+        body .is-layout-constrained > .alignright {
+            float: right;
+            margin-inline-start: 2em;
+            margin-inline-end: 0;
+        }
+
+        body .is-layout-constrained > .aligncenter {
+            margin-left: auto !important;
+            margin-right: auto !important;
+        }
+
+        body .is-layout-constrained > :where(:not(.alignleft):not(.alignright):not(.alignfull)) {
+            max-width: var(--wp--style--global--content-size);
+            margin-left: auto !important;
+            margin-right: auto !important;
+        }
+
+        body .is-layout-constrained > .alignwide {
+            max-width: var(--wp--style--global--wide-size);
+        }
+
+        body .is-layout-flex {
+            display: flex;
+        }
+
+        body .is-layout-flex {
+            flex-wrap: wrap;
+            align-items: center;
+        }
+
+            body .is-layout-flex > * {
+                margin: 0;
+            }
+
+        body .is-layout-grid {
+            display: grid;
+        }
+
+            body .is-layout-grid > * {
+                margin: 0;
+            }
+
+        :where(.wp-block-columns.is-layout-flex) {
+            gap: 2em;
+        }
+
+        :where(.wp-block-columns.is-layout-grid) {
+            gap: 2em;
+        }
+
+        :where(.wp-block-post-template.is-layout-flex) {
+            gap: 1.25em;
+        }
+
+        :where(.wp-block-post-template.is-layout-grid) {
+            gap: 1.25em;
+        }
+
+        .has-black-color {
+            color: var(--wp--preset--color--black) !important;
+        }
+
+        .has-cyan-bluish-gray-color {
+            color: var(--wp--preset--color--cyan-bluish-gray) !important;
+        }
+
+        .has-white-color {
+            color: var(--wp--preset--color--white) !important;
+        }
+
+        .has-pale-pink-color {
+            color: var(--wp--preset--color--pale-pink) !important;
+        }
+
+        .has-vivid-red-color {
+            color: var(--wp--preset--color--vivid-red) !important;
+        }
+
+        .has-luminous-vivid-orange-color {
+            color: var(--wp--preset--color--luminous-vivid-orange) !important;
+        }
+
+        .has-luminous-vivid-amber-color {
+            color: var(--wp--preset--color--luminous-vivid-amber) !important;
+        }
+
+        .has-light-green-cyan-color {
+            color: var(--wp--preset--color--light-green-cyan) !important;
+        }
+
+        .has-vivid-green-cyan-color {
+            color: var(--wp--preset--color--vivid-green-cyan) !important;
+        }
+
+        .has-pale-cyan-blue-color {
+            color: var(--wp--preset--color--pale-cyan-blue) !important;
+        }
+
+        .has-vivid-cyan-blue-color {
+            color: var(--wp--preset--color--vivid-cyan-blue) !important;
+        }
+
+        .has-vivid-purple-color {
+            color: var(--wp--preset--color--vivid-purple) !important;
+        }
+
+        .has-black-background-color {
+            background-color: var(--wp--preset--color--black) !important;
+        }
+
+        .has-cyan-bluish-gray-background-color {
+            background-color: var(--wp--preset--color--cyan-bluish-gray) !important;
+        }
+
+        .has-white-background-color {
+            background-color: var(--wp--preset--color--white) !important;
+        }
+
+        .has-pale-pink-background-color {
+            background-color: var(--wp--preset--color--pale-pink) !important;
+        }
+
+        .has-vivid-red-background-color {
+            background-color: var(--wp--preset--color--vivid-red) !important;
+        }
+
+        .has-luminous-vivid-orange-background-color {
+            background-color: var(--wp--preset--color--luminous-vivid-orange) !important;
+        }
+
+        .has-luminous-vivid-amber-background-color {
+            background-color: var(--wp--preset--color--luminous-vivid-amber) !important;
+        }
+
+        .has-light-green-cyan-background-color {
+            background-color: var(--wp--preset--color--light-green-cyan) !important;
+        }
+
+        .has-vivid-green-cyan-background-color {
+            background-color: var(--wp--preset--color--vivid-green-cyan) !important;
+        }
+
+        .has-pale-cyan-blue-background-color {
+            background-color: var(--wp--preset--color--pale-cyan-blue) !important;
+        }
+
+        .has-vivid-cyan-blue-background-color {
+            background-color: var(--wp--preset--color--vivid-cyan-blue) !important;
+        }
+
+        .has-vivid-purple-background-color {
+            background-color: var(--wp--preset--color--vivid-purple) !important;
+        }
+
+        .has-black-border-color {
+            border-color: var(--wp--preset--color--black) !important;
+        }
+
+        .has-cyan-bluish-gray-border-color {
+            border-color: var(--wp--preset--color--cyan-bluish-gray) !important;
+        }
+
+        .has-white-border-color {
+            border-color: var(--wp--preset--color--white) !important;
+        }
+
+        .has-pale-pink-border-color {
+            border-color: var(--wp--preset--color--pale-pink) !important;
+        }
+
+        .has-vivid-red-border-color {
+            border-color: var(--wp--preset--color--vivid-red) !important;
+        }
+
+        .has-luminous-vivid-orange-border-color {
+            border-color: var(--wp--preset--color--luminous-vivid-orange) !important;
+        }
+
+        .has-luminous-vivid-amber-border-color {
+            border-color: var(--wp--preset--color--luminous-vivid-amber) !important;
+        }
+
+        .has-light-green-cyan-border-color {
+            border-color: var(--wp--preset--color--light-green-cyan) !important;
+        }
+
+        .has-vivid-green-cyan-border-color {
+            border-color: var(--wp--preset--color--vivid-green-cyan) !important;
+        }
+
+        .has-pale-cyan-blue-border-color {
+            border-color: var(--wp--preset--color--pale-cyan-blue) !important;
+        }
+
+        .has-vivid-cyan-blue-border-color {
+            border-color: var(--wp--preset--color--vivid-cyan-blue) !important;
+        }
+
+        .has-vivid-purple-border-color {
+            border-color: var(--wp--preset--color--vivid-purple) !important;
+        }
+
+        .has-vivid-cyan-blue-to-vivid-purple-gradient-background {
+            background: var(--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple) !important;
+        }
+
+        .has-light-green-cyan-to-vivid-green-cyan-gradient-background {
+            background: var(--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan) !important;
+        }
+
+        .has-luminous-vivid-amber-to-luminous-vivid-orange-gradient-background {
+            background: var(--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange) !important;
+        }
+
+        .has-luminous-vivid-orange-to-vivid-red-gradient-background {
+            background: var(--wp--preset--gradient--luminous-vivid-orange-to-vivid-red) !important;
+        }
+
+        .has-very-light-gray-to-cyan-bluish-gray-gradient-background {
+            background: var(--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray) !important;
+        }
+
+        .has-cool-to-warm-spectrum-gradient-background {
+            background: var(--wp--preset--gradient--cool-to-warm-spectrum) !important;
+        }
+
+        .has-blush-light-purple-gradient-background {
+            background: var(--wp--preset--gradient--blush-light-purple) !important;
+        }
+
+        .has-blush-bordeaux-gradient-background {
+            background: var(--wp--preset--gradient--blush-bordeaux) !important;
+        }
+
+        .has-luminous-dusk-gradient-background {
+            background: var(--wp--preset--gradient--luminous-dusk) !important;
+        }
+
+        .has-pale-ocean-gradient-background {
+            background: var(--wp--preset--gradient--pale-ocean) !important;
+        }
+
+        .has-electric-grass-gradient-background {
+            background: var(--wp--preset--gradient--electric-grass) !important;
+        }
+
+        .has-midnight-gradient-background {
+            background: var(--wp--preset--gradient--midnight) !important;
+        }
+
+        .has-small-font-size {
+            font-size: var(--wp--preset--font-size--small) !important;
+        }
+
+        .has-medium-font-size {
+            font-size: var(--wp--preset--font-size--medium) !important;
+        }
+
+        .has-large-font-size {
+            font-size: var(--wp--preset--font-size--large) !important;
+        }
+
+        .has-x-large-font-size {
+            font-size: var(--wp--preset--font-size--x-large) !important;
+        }
+
+        .wp-block-navigation a:where(:not(.wp-element-button)) {
+            color: inherit;
+        }
+
+        :where(.wp-block-post-template.is-layout-flex) {
+            gap: 1.25em;
+        }
+
+        :where(.wp-block-post-template.is-layout-grid) {
+            gap: 1.25em;
+        }
+
+        :where(.wp-block-columns.is-layout-flex) {
+            gap: 2em;
+        }
+
+        :where(.wp-block-columns.is-layout-grid) {
+            gap: 2em;
+        }
+
+        .wp-block-pullquote {
+            font-size: 1.5em;
+            line-height: 1.6;
+        }
+    </style>
+    <link rel="stylesheet" id="extra-feature-css-css" href="css/extra.features.css" media="all">
+    <link rel="stylesheet" id="contact-form-7-css" href="css/styles.css" media="all">
+    <link rel="stylesheet" id="wsl-widget-css" href="css/style_1.css" media="all">
+    <link rel="stylesheet" id="base-css-css" href="css/base.css" media="all">
+    <link rel="stylesheet" id="jquery-ui-datepicker-css" href="css/jquery.ui.datepicker.css" media="all">
+    <link rel="stylesheet" id="sliderhelper-css-css" href="css/sliderhelper.css" media="all">
+    <link rel="stylesheet" id="main-css-css" href="css/style.css" media="all">
+    <link rel="stylesheet" id="js_composer_front-css" href="css/js_composer.min.css" media="all">
+    <link rel="stylesheet" id="font-awesome-css" href="css/font-awesome.css" media="all">
+    <script src="js/jquery.min.js" id="jquery-core-js"></script>
+    <script src="js/jquery-migrate.min.js" id="jquery-migrate-js"></script>
+    <script src="js/external.js" id="external-link-js"></script>
+    <script type="text/javascript" id="s3waas-accessibility-js-extra">
+        /* <![CDATA[ */
+        var S3WaaSAccessibilityParams = { "blogInfoName": "Department Preview Site", "defaultLinkAriaLabel": "External site that opens in a new window", "defaultLinkTitle": "External site that opens in a new window", "flexNavPrevTitle": "Previous", "flexNavPlayPauseTitle": "Play\/Pause", "flexNavNextTitle": "Next", "ariaLabelDownload": "Download" };
+/* ]]> */
+    </script>
+    <script src="js/accessibility.js" id="s3waas-accessibility-js"></script>
+    <link rel="https://api.w.org/" href="https://s3f1981e4bd8a0d6d8462016d2fc6276b3.s3waas.gov.in/wp-json/">
+    <link rel="alternate" type="application/json" href="https://s3f1981e4bd8a0d6d8462016d2fc6276b3.s3waas.gov.in/wp-json/wp/v2/pages/241">
+    <link rel="EditURI" type="application/rsd+xml" title="RSD" href="https://s3f1981e4bd8a0d6d8462016d2fc6276b3.s3waas.gov.in/xmlrpc.php?rsd">
+    <link rel="canonical" href="https://s3f1981e4bd8a0d6d8462016d2fc6276b3.s3waas.gov.in/about-department/">
+    <link rel="shortlink" href="https://s3f1981e4bd8a0d6d8462016d2fc6276b3.s3waas.gov.in/?p=241">
+    <link rel="alternate" type="application/json+oembed" href="https://s3f1981e4bd8a0d6d8462016d2fc6276b3.s3waas.gov.in/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fs3f1981e4bd8a0d6d8462016d2fc6276b3.s3waas.gov.in%2Fabout-department%2F">
+    <link rel="alternate" type="text/xml+oembed" href="https://s3f1981e4bd8a0d6d8462016d2fc6276b3.s3waas.gov.in/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fs3f1981e4bd8a0d6d8462016d2fc6276b3.s3waas.gov.in%2Fabout-department%2F&amp;format=xml">
+    <noscript>
+        <style>
+            #topBar #accessibility ul li .goiSearch, #topBar1 #accessibility ul li .goiSearch {
+                visibility: visible;
+            }
+
+            #topBar #accessibility ul li .socialIcons ul, #topBar1 #accessibility ul li .socialIcons ul {
+                background: #fff !important;
+            }
+
+            #topBar #accessibility ul li .goiSearch, #topBar1 #accessibility ul li .goiSearch {
+                right: 0;
+                left: inherit;
+            }
+
+            .nav li a:focus > ul {
+                left: 0;
+                opacity: 0.99;
+            }
+
+            a:focus, button:focus, .carasoleflex-wrap .flexslider .slides > li a:focus, .flexslider .slides > li a:focus {
+                outline: 3px solid #ff8c00 !important;
+            }
+
+            .flexslider .slides > li {
+                display: block !important;
+            }
+
+            .flexslider .slides img {
+                width: auto !important;
+            }
+
+            .nav li.active > a, .nav li > a:hover, .nav li > a:focus, .nav ul li a:hover,
+            .nav li:hover > a {
+                border-top: none;
+                color: #ffffff;
+            }
+
+            .nav li.active > a {
+                border: 0;
+            }
+
+            .nav ul {
+                opacity: 1;
+                left: 0;
+                position: static !important;
+                width: auto;
+                border: 0;
+            }
+
+            .nav li {
+                position: static !important;
+                display: block;
+                float: none;
+                border: 0 !important;
+            }
+
+                .nav li > a {
+                    float: none;
+                    display: block;
+                    background-color: #ff9f08 !important;
+                    color: #ffffff;
+                    margin: 0;
+                    padding: 0px 15px;
+                    border-radius: 0;
+                    border-bottom: 1px solid #ffffff !important;
+                    position: static !important;
+                    border-top: 0;
+                    font-size: 14px !important;
+                }
+
+            .nav ul.sub-menu li > a {
+                background-color: #464141 !important;
+                font-size: 12px !important;
+                padding: 0 25px;
+            }
+
+            .style-1 .menuWrapper, .style-2 .menuWrapper, .style-6 .menuWrapper, .style-5 .menuWrapper {
+                background: #e1e1e1 !important;
+            }
+
+            .style-1 .nav li > a, .style-1 .nav li > a:hover {
+                background-color: #875506 !important;
+            }
+
+            .style-1 .nav ul.sub-menu li > a, .style-1 .nav ul.sub-menu li > a:hover {
+                background-color: #3e2908 !important;
+            }
+
+            .style-2 .nav li > a, .style-2 .nav li > a:hover {
+                background-color: #11372a !important;
+            }
+
+            .style-2 .nav ul.sub-menu li > a, .style-2 .nav ul.sub-menu li > a:hover {
+                background-color: #677314 !important;
+            }
+
+            .style-6 .nav li > a, .style-6 .nav li > a:hover {
+                background-color: #f65a64 !important;
+            }
+
+            .style-6 .nav ul.sub-menu li > a:hover {
+                background-color: #fff !important;
+            }
+
+            .style-6 .nav ul.sub-menu li > a {
+                background-color: transparent !important;
+            }
+
+            .style-6 .menuWrapper .nav li ul li {
+                border-bottom: 1px solid transparent !important;
+            }
+
+            .style-6 .menuWrapper .nav li a {
+                border-radius: 0 !important;
+                color: #fff !important;
+            }
+
+                .style-6 .menuWrapper .nav li a:hover {
+                    color: #000 !important;
+                }
+
+            .style-5 .nav li > a, .style-5 .nav li > a:hover {
+                background-color: #fd9c29 !important;
+                color: #ffffff !important;
+            }
+
+            .style-5 .nav ul.sub-menu li > a, .style-5 .nav ul.sub-menu li > a:hover {
+                background-color: #464141 !important;
+                color: #ffffff !important;
+            }
+
+            .style-6 .menuWrapper .nav li ul li a {
+                margin: 0;
+                padding: 7px 15px;
+            }
+
+            ul li .socialIcons {
+                visibility: visible !important;
+            }
+        </style>
+    </noscript>
+    <link rel="alternate" href="https://s3f1981e4bd8a0d6d8462016d2fc6276b3.s3waas.gov.in/about-department/" hreflang="en">
+    <link rel="alternate" href="https://s3f1981e4bd8a0d6d8462016d2fc6276b3.s3waas.gov.in/mr/%e0%a4%b5%e0%a4%bf%e0%a4%ad%e0%a4%be%e0%a4%97%e0%a4%be%e0%a4%b5%e0%a4%bf%e0%a4%b7%e0%a4%af%e0%a5%80/" hreflang="mr">
+    <link rel="alternate" href="https://s3f1981e4bd8a0d6d8462016d2fc6276b3.s3waas.gov.in/hi/%e0%a4%b5%e0%a4%bf%e0%a4%ad%e0%a4%be%e0%a4%97-%e0%a4%95%e0%a5%87-%e0%a4%ac%e0%a4%be%e0%a4%b0%e0%a5%87-%e0%a4%ae%e0%a5%87%e0%a4%82/" hreflang="hi">
+    <link rel="alternate" href="https://s3f1981e4bd8a0d6d8462016d2fc6276b3.s3waas.gov.in/pa/%e0%a8%b5%e0%a8%bf%e0%a8%ad%e0%a8%be%e0%a8%97-%e0%a8%ac%e0%a8%be%e0%a8%b0%e0%a9%87/" hreflang="pa">
+    <link rel="alternate" href="https://s3f1981e4bd8a0d6d8462016d2fc6276b3.s3waas.gov.in/or/%e0%ac%ac%e0%ac%bf%e0%ac%ad%e0%ac%be%e0%ac%97-%e0%ac%ac%e0%ac%bf%e0%ac%b7%e0%ad%9f%e0%ac%b0%e0%ad%87/" hreflang="or">
+    <meta name="generator" content="Powered by WPBakery Page Builder - drag and drop page builder for WordPress.">
+    <noscript>
+        <style>
+            .wpb_animate_when_almost_visible {
+                opacity: 1;
+            }
+        </style>
+    </noscript>
+    <!--[if lt IE 9]>
+        <script src="https://s3f1981e4bd8a0d6d8462016d2fc6276b3.s3waas.gov.in/wp-content/themes/sdo-theme/js/html5shiv.min.js"></script>
+    <![endif]-->
+    <%--<script>
+        let ajaxurl = ajax_url = ajaxUrl = AJAX_URL = AJAXURL = "https://s3f1981e4bd8a0d6d8462016d2fc6276b3.s3waas.gov.in/wp-admin/admin-ajax.php";
+    </script>--%>
+    <script>
+        window.addEventListener('load', function () {
+            // Remove the blur effect when the page has loaded
+            document.body.style.filter = 'none';
+            document.querySelector('header').style.filter = 'none';
+            document.querySelector('main').style.filter = 'none';
+            document.querySelector('footer').style.filter = 'none';
+            document.getElementById('banner').style.filter = 'none';
+            // Hide the loader container when the page has loaded
+            document.querySelector('.loader-container').style.display = 'none';
+        });
+
+        function changeTheme(color) {
+            // Remove any existing theme classes
+            document.body.classList.remove('red-theme', 'green-theme', 'blue-theme');
+
+            // Add the appropriate theme class based on the color parameter
+            if (color === 'red') {
+                document.body.classList.add('red-theme');
+                setThemeCookie('red');
+            } else if (color === 'green') {
+                document.body.classList.add('green-theme');
+                setThemeCookie('green');
+            } else if (color === 'blue') {
+                document.body.classList.add('blue-theme');
+                setThemeCookie('blue');
+            }
+        }
+
+        function setThemeCookie(color) {
+            document.cookie = "theme=" + color + "; path=/";
+        }
+
+        function getThemeCookie() {
+            const name = "theme=";
+            const decodedCookie = decodeURIComponent(document.cookie);
+            const cookieArray = decodedCookie.split(';');
+            for (let i = 0; i < cookieArray.length; i++) {
+                let cookie = cookieArray[i];
+                while (cookie.charAt(0) === ' ') {
+                    cookie = cookie.substring(1);
+                }
+                if (cookie.indexOf(name) === 0) {
+                    return cookie.substring(name.length, cookie.length);
+                }
+            }
+            return "";
+        }
+
+        window.onload = function () {
+            const theme = getThemeCookie();
+            if (theme) {
+                changeTheme(theme);
+            }
+        };
+    </script>
+</head>
+<body class="page-template-default page page-id-241 lang-en style-2 home-1 wpb-js-composer js-comp-ver-6.1 vc_responsive">
+    <div class="loader-container">
+        <svg class="pl" width="240" height="240" viewBox="0 0 240 240">
+            <circle class="pl__ring pl__ring--a" cx="120" cy="120" r="105" fill="none" stroke="#000" stroke-width="20" stroke-dasharray="0 660" stroke-dashoffset="-330" stroke-linecap="round"></circle>
+            <circle class="pl__ring pl__ring--b" cx="120" cy="120" r="35" fill="none" stroke="#000" stroke-width="20" stroke-dasharray="0 220" stroke-dashoffset="-110" stroke-linecap="round"></circle>
+            <circle class="pl__ring pl__ring--c" cx="85" cy="120" r="70" fill="none" stroke="#000" stroke-width="20" stroke-dasharray="0 440" stroke-linecap="round"></circle>
+            <circle class="pl__ring pl__ring--d" cx="155" cy="120" r="70" fill="none" stroke="#000" stroke-width="20" stroke-dasharray="0 440" stroke-linecap="round"></circle>
+        </svg>
+    </div>
+    <header id="mainHeader">
+        <!--topBar start-->
+        <div id="topBar">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-xs-12">
+                        <div class="push-right" aria-label="Primary">
+                            <div id="accessibility">
+                                <ul id="accessibilityMenu" class="clearfix">
+                                    <li class="switchTheme">
+                                        <span class="fa fa-circle" style="color: maroon;" onclick="changeTheme('red');" title="Maroon theme"></span>
+                                        &nbsp;&nbsp;
+                                        <span class="fa fa-circle" style="color: green;" onclick="changeTheme('green');" title="Green theme"></span>
+                                        &nbsp;&nbsp;
+                                        <span class="fa fa-circle" style="color: #062F4F ;" onclick="changeTheme('blue');" title="Default theme"></span>
+                                    </li>
+                                    <li>
+                                        <a href="#SkipContent" class="skipContent" aria-label="Skip to main content" title="Skip to main content">
+                                            <span class="m-hide">Skip to main content</span>
+                                            <span class="icon-skip-to-main m-show"></span>
+                                        </a>
+                                    </li>
+                                    <li class="searchbox">
+                                        <a href="javascript:void(0);" tabindex="0" title="Site Search" aria-label="Site Search" role="button" data-toggle="dropdown">
+                                            <img class="show-con" src="images/search_icon.svg" title="Search Icon" alt="Search Icon">
+                                        </a>
+                                        <div class="goiSearch search-form-container">
+                                            <form action="https://s3f1981e4bd8a0d6d8462016d2fc6276b3.s3waas.gov.in/" method="get">
+                                                <label for="search" class="hide">Search</label>
+                                                <input type="search" placeholder="Search here..." name="s" id="search" value="">
+                                                <button class="accent-color accent-border-color" type="submit" title="Search"><span class="icon-search"></span><span class="hide">Search</span></button>
+                                            </form>
+                                        </div>
+                                    </li>
+                                    <li class="social-media">
+                                        <a href="javascript:void(0);" tabindex="0" class="social-group-icon" title="Social Media Links" aria-label="Social Media Links" role="button" data-toggle="dropdown">
+                                            <img class="show-con" src="images/social_media.svg" title="Social Icon" alt="Social Icon">
+                                            <span class="hide">Social Media Links</span>
+                                        </a>
+                                        <ul class="socialIcons">
+                                            <li>
+                                                <a href="#" target="_self" aria-label="Facebook | External site that opens in a new window">
+                                                    <img src="images/facebook_icon.svg" title="Facebook | External site that opens in a new window" alt="Facebook, External Link that opens in a new window"></a>
+                                            </li>
+                                            <li>
+                                                <a href="#" target="_self" aria-label="Twitter | External site that opens in a new window">
+                                                    <img class="twitter" src="images/twitter_icon.svg" title="Twitter | External site that opens in a new window" alt="Twitter, External Link that opens in a new window"></a>
+                                            </li>
+                                            <li>
+                                                <a href="#" target="_self" aria-label="Youtube | External site that opens in a new window">
+                                                    <img src="images/youtube_icon.svg" title="Youtube | External site that opens in a new window" alt="youtube, External Link that opens in a new window"></a>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                    <li class="top-sitemap">
+                                        <a href="https://s3f1981e4bd8a0d6d8462016d2fc6276b3.s3waas.gov.in/sitemap/" aria-label="Sitemap" title="Sitemap">
+                                            <img class="show-con" src="images/sitemap.svg" title="Sitemap Icon" alt="Sitemap Icon">
+                                            <span class="hide">Sitemap</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="javascript:void(0);" tabindex="0" title="Accessibility Links" aria-label="Accessibility Links" class="accessible-icon" role="button" data-toggle="dropdown">
+                                            <span class="tcon">Accessibility Links</span>
+                                            <img class="show-con" src="images/accessibility_icon.svg" title="Accessibility Icon" alt="Accessibility Icon">
+                                        </a>
+                                        <ul class="accessiblelinks textSizing" aria-label="Font size and Contrast controls">
+                                            <li class="fontSizeEvent">
+                                                <a data-selected-text="selected" data-event-type="increase" href="javascript:void(0);" tabindex="0" data-label="Font Size Increase" title="Font Size Increase" aria-label="Font Size Increase"><span aria-hidden="true">A+</span> <span class="tcon">Font Size Increase</span></a>
+                                            </li>
+                                            <li class="fontSizeEvent">
+                                                <a data-selected-text="selected" data-event-type="normal" href="javascript:void(0);" tabindex="0" data-label="Normal Font" title="Normal Font" aria-label="Normal Font"><span aria-hidden="true">A</span> <span class="tcon">Normal Font</span></a>
+                                            </li>
+                                            <li class="fontSizeEvent">
+                                                <a data-selected-text="selected" data-event-type="decrease" href="javascript:void(0);" tabindex="0" data-label="Font Size Decrease" title="Font Size Decrease" aria-label="Font Size Decrease"><span aria-hidden="true">A-</span> <span class="tcon">Font Size Decrease</span></a>
+                                            </li>
+                                            <li class="highContrast dark tog-con">
+                                                <a href="javascript:void(0);" tabindex="0" title="High Contrast" aria-label="High Contrast"><span aria-hidden="true">A</span> <small class="tcon">High Contrast</small></a>
+                                            </li>
+                                            <li class="highContrast light">
+                                                <a class="link-selected" href="javascript:void(0);" tabindex="0" title="Normal Contrast - Selected" aria-label="Normal Contrast - Selected"><span aria-hidden="true">A</span> <small class="tcon">Normal Contrast</small></a>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                    <li class="languageCont" aria-label="Change Language">
+                                        <a href="javascript:void(0);" tabindex="0" class="language link-selected" aria-label="English - Selected" title="English - Selected" role="button" data-toggle="dropdown">English</a>
+                                        <ul class="socialIcons">
+                                            <li class="lang-item lang-item-55 lang-item-hi mFocus">
+                                                <a lang="hi" hreflang="hi-IN" href="index-hi.aspx" aria-label="हिन्दी" title="हिन्दी">हिन्दी</a>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="push-left">
+                            <div class="govBranding">
+                                <ul>
+                                    <li>
+                                        <a lang="hi" href="https://up.gov.in/hi">उत्तर प्रदेश सरकार
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a lang="en" href="https://up.gov.in/en">Government of Uttar Pradesh
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--topBar end-->
+        <!--header middle start-->
+        <div class="header-wrapper">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-lg-8 col-md-8 col-sm-8 col-xs-7">
+                        <div class="logo">
+                            <a href="index.aspx" title="Go to home" class="site_logo" rel="home">
+                                <img class="emblem" src="images/UPGov.png" alt="UP state emblem">
+                                <div class="logo_text">
+                                    <strong lang="hi">छात्रवृत्ति एवं शुल्क प्रतिपूर्ति ऑनलाइन प्रणाली
+                                    </strong>
+                                    <h1 class="h1-logo">Scholarship and Fee Reimbursement Online System</h1>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-4 col-sm-4 col-xs-5">
+                        <div class="header-right hidden-xs push-right">
+                            <a aria-label="Space for logo - External site that opens in a new window" href="#" target="_blank" title="CM Uttar Pradesh">
+                                <img id="logo" class="sw-logo" src="images/ADITYANATH_YOGI-removebg-preview.png" alt="CM Uttar Pradesh">
+                            </a>
+                            <a aria-label="Digital India Image - External site that opens in a new window" href="https://www.digitalindia.gov.in/" target="_blank" title="Digital India Image">
+                                <img class="sw-logo" src="images/2019031587.png" alt="Digital India">
+                            </a>
+                        </div>
+                        <a class="menuToggle" href="javascript:void(0);"><span class="icon-menu" aria-hidden="true"></span><span class="menu-text">Menu Toggle</span> </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--header middle end-->
+        <!--main menu start-->
+        <div class="menuWrapper">
+            <div class="menuMoreText hide">More</div>
+            <div class="container">
+                <nav class="menu">
+                    <ul id="menu-header-en" class="nav clearfix">
+                        <li id="menu-item-4" class="menu-item menu-item-type-custom menu-item-object-custom current-menu-item current_page_item menu-item-4">
+                            <a href="index.aspx">Home</a>
+                        </li>
+                        <li id="StudentsMenu" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-3092 has-sub">
+                            <a href="students.aspx" aria-haspopup="true" aria-expanded="false">Students<span class="indicator"></span></a>
+                            <ul aria-hidden="true" class="sub-menu">
+                                <li id="menu-item-196" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-196 has-sub-child">
+                                    <a href="registration.aspx" tabindex="-1">New Registration</a>
+                                </li>
+                                <li id="menu-item-3088" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-3088 has-sub has-sub-child">
+                                    <a href="#" tabindex="-1" aria-haspopup="true" aria-expanded="false">Login Fresh<span class="indicator"></span></a>
+                                    <ul aria-hidden="true" class="sub-menu">
+                                        <li id="menu-item-310" class="menu-item menu-item-type-taxonomy menu-item-object-organization-type menu-item-310 has-sub-child">
+                                            <a href="LoginStudentPreFresh.aspx" tabindex="-1">Prematric Students</a>
+                                        </li>
+                                        <li id="menu-item-311" class="menu-item menu-item-type-taxonomy menu-item-object-organization-type menu-item-311 has-sub-child">
+                                            <a href="LoginStudentPostInter.aspx" tabindex="-1">Postmetric Students</a>
+                                        </li>
+                                        <li id="menu-item-312" class="menu-item menu-item-type-taxonomy menu-item-object-organization-type menu-item-312 has-sub-child">
+                                            <a href="LoginStudentPost.aspx" tabindex="-1">Postmetric Other than Inter Students</a>
+                                        </li>
+                                        <li id="menu-item-314" class="menu-item menu-item-type-taxonomy menu-item-object-organization-type menu-item-314 has-sub-child">
+                                            <a href="LoginStudentPostOS.aspx" tabindex="-1">Postmetric Other State Students</a>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li id="menu-item-3088" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-3088 has-sub has-sub-child">
+                                    <a href="#" tabindex="-1" aria-haspopup="true" aria-expanded="false">Login Renewal<span class="indicator"></span></a>
+                                    <ul aria-hidden="true" class="sub-menu">
+                                        <li id="menu-item-310" class="menu-item menu-item-type-taxonomy menu-item-object-organization-type menu-item-310 has-sub-child">
+                                            <a href="LoginStudentPreRenew.aspx" tabindex="-1">Prematric Students</a>
+                                        </li>
+                                        <li id="menu-item-311" class="menu-item menu-item-type-taxonomy menu-item-object-organization-type menu-item-311 has-sub-child">
+                                            <a href="LoginStudentPostRenewInter.aspx" tabindex="-1">Postmetric Students</a>
+                                        </li>
+                                        <li id="menu-item-312" class="menu-item menu-item-type-taxonomy menu-item-object-organization-type menu-item-312 has-sub-child">
+                                            <a href="LoginStudentPostRenew.aspx" tabindex="-1">Postmetric Other than Inter Students</a>
+                                        </li>
+                                        <li id="menu-item-314" class="menu-item menu-item-type-taxonomy menu-item-object-organization-type menu-item-314 has-sub-child">
+                                            <a href="LoginStudentPostRenewOS.aspx" tabindex="-1">Postmetric Other State Students</a>
+                                        </li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </li>
+                        <li id="InstituteMenu" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-3092 has-sub">
+                            <a href="institutes.aspx" aria-haspopup="true" aria-expanded="false">Institutes<span class="indicator"></span></a>
+                            <ul aria-hidden="true" class="sub-menu">
+                                <li id="menu-item-196" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-196 has-sub-child">
+                                    <a href="instReg.aspx" tabindex="-1">New Registration</a>
+                                </li>
+                                <li id="menu-item-3088" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-3088 has-sub has-sub-child">
+                                    <a href="#" tabindex="-1" aria-haspopup="true" aria-expanded="false">Login<span class="indicator"></span></a>
+                                    <ul aria-hidden="true" class="sub-menu">
+                                        <li id="menu-item-310" class="menu-item menu-item-type-taxonomy menu-item-object-organization-type menu-item-310 has-sub-child">
+                                            <a href="Inst_login_SM.aspx" tabindex="-1">Prematric Institution</a>
+                                        </li>
+                                        <li id="menu-item-311" class="menu-item menu-item-type-taxonomy menu-item-object-organization-type menu-item-311 has-sub-child">
+                                            <a href="Inst_login_SM.aspx" tabindex="-1">Postmetric Institution</a>
+                                        </li>
+                                        <li id="menu-item-312" class="menu-item menu-item-type-taxonomy menu-item-object-organization-type menu-item-312 has-sub-child">
+                                            <a href="oscollege_login.aspx" tabindex="-1">Out of State Institution</a>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li id="menu-item-196" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-196 has-sub-child">
+                                    <a href="Univ_login_SM.aspx" tabindex="-1">University/ Affiliating Agencies Login</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li id="DepartmentMenu" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-63 has-sub">
+                            <a href="departments.aspx" aria-haspopup="true" aria-expanded="false">Departments<span class="indicator"></span></a>
+                            <ul aria-hidden="true" class="sub-menu">
+                                <li id="menu-item-3849" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-3849 has-sub-child">
+                                    <a href="LoginUser.aspx" tabindex="-1">Hon'ble Minister Login</a>
+                                </li>
+                                <li id="menu-item-3088" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-3088 has-sub has-sub-child">
+                                    <a href="#" tabindex="-1" aria-haspopup="true" aria-expanded="false">District Welfare<span class="indicator"></span></a>
+                                    <ul aria-hidden="true" class="sub-menu">
+                                        <li id="menu-item-310" class="menu-item menu-item-type-taxonomy menu-item-object-organization-type menu-item-310 has-sub-child">
+                                            <a href="Dsw_Obc_Dmo_Login.aspx?a=SW" tabindex="-1">District Social Welfare Officer</a>
+                                        </li>
+                                        <li id="menu-item-311" class="menu-item menu-item-type-taxonomy menu-item-object-organization-type menu-item-311 has-sub-child">
+                                            <a href="Dsw_Obc_Dmo_Login.aspx?a=OBC" tabindex="-1">District Backward Class Welfare Officer</a>
+                                        </li>
+                                        <li id="menu-item-312" class="menu-item menu-item-type-taxonomy menu-item-object-organization-type menu-item-312 has-sub-child">
+                                            <a href="Dsw_Obc_Dmo_Login.aspx?a=MIN" tabindex="-1">District Minority Welfare Officer</a>
+                                        </li>
+                                        <li id="menu-item-314" class="menu-item menu-item-type-taxonomy menu-item-object-organization-type menu-item-314 has-sub-child">
+                                            <a href="Dsw_Obc_Dmo_Login.aspx?a=ST" tabindex="-1">District Scheduled Tribes Officer</a>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li id="menu-item-1531" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1531 has-sub-child">
+                                    <a href="CommingSoon.aspx" tabindex="-1">Administrator</a>
+                                </li>
+                                <li id="menu-item-1676" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1676 has-sub-child">
+                                    <a href="AuditerLogin.aspx" tabindex="-1">Auditor</a>
+                                </li>
+                                <li id="menu-item-1676" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1676 has-sub-child">
+                                    <a href="Mandal_Login.aspx" tabindex="-1">Deputy Director</a>
+                                </li>
+                                <li id="menu-item-1676" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1676 has-sub-child">
+                                    <a href="dwbmo_Login.aspx" tabindex="-1">Directorate</a>
+                                </li>
+                                <li id="menu-item-1676" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1676 has-sub-child">
+                                    <a href="Dios_Login.aspx" tabindex="-1">DIOS Login</a>
+                                </li>
+                                <li id="menu-item-1676" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1676 has-sub-child">
+                                    <a href="osInst_login.aspx" tabindex="-1">Other State Administrator</a>
+                                </li>
+                                <li id="menu-item-1676" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1676 has-sub-child">
+                                    <a href="Div18_login.aspx" tabindex="-1">Higher Education Divisional Officer</a>
+                                </li>
+                                <li id="menu-item-1676" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1676 has-sub-child">
+                                    <a href="EduDeptHodLogin.aspx" tabindex="-1">Head Of Department of Education</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li id="ReportsMenu" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-337 has-sub">
+                            <a href="reports.aspx" aria-haspopup="true" aria-expanded="false">Reports<span class="indicator"></span></a>
+                            <ul aria-hidden="true" class="sub-menu">
+                                <li id="menu-item-338" class="menu-item menu-item-type-taxonomy menu-item-object-provider menu-item-338 has-sub-child">
+                                    <a href="reports.aspx" tabindex="-1">All Session Reports</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li id="StatusMenu" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-63 has-sub">
+                            <a href="status.aspx" aria-haspopup="true" aria-expanded="false">Status<span class="indicator"></span></a>
+                            <ul aria-hidden="true" class="sub-menu">
+                                <li id="menu-item-3849" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-3849 has-sub-child">
+                                    <a href="status2223.aspx" tabindex="-1">Application Status 2022-23</a>
+                                </li>
+                                <li id="menu-item-1531" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1531 has-sub-child">
+                                    <a href="status2122.aspx" tabindex="-1">Application Status 2021-22</a>
+                                </li>
+                                <li id="menu-item-1676" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1676 has-sub-child">
+                                    <a href="status2021.aspx" tabindex="-1">Application Status 2020-21</a>
+                                </li>
+                                <li id="menu-item-1676" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1676 has-sub-child">
+                                    <a href="status1920.aspx" tabindex="-1">Application Status 2019-20</a>
+                                </li>
+                                <li id="menu-item-1676" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1676 has-sub-child">
+                                    <a href="status1819.aspx" tabindex="-1">Application Status 2018-19</a>
+                                </li>
+                                <li id="menu-item-1676" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1676 has-sub-child">
+                                    <a href="status1718.aspx" tabindex="-1">Application Status 2017-18</a>
+                                </li>
+                                <li id="menu-item-1676" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1676 has-sub-child">
+                                    <a href="PreviousYrTimeTables.aspx" tabindex="-1">Important Information</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li id="menu-item-174" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1522">
+                            <a href="CommingSoon.aspx" aria-haspopup="true" aria-expanded="false">Grievance Redressal System</a>
+                        </li>
+                        <li id="ContactUsMenu" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1522">
+                            <a href="Contactus.aspx" aria-haspopup="true" aria-expanded="false">Contact Us</a>
+                        </li>
+                        <li id="HelpMenu" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1522">
+                            <a href="help.aspx" aria-haspopup="true" aria-expanded="false">Help</a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+        <!--main menu end-->
+        <div id="overflowMenu">
+            <div class="ofMenu">
+                <ul></ul>
+            </div>
+            <a href="#" title="Close" class="closeMenu"><span class="icon-close" aria-hidden="true"></span>Close</a>
+        </div>
+    </header>
+    <div id="banner" class="banner-wrapper innerBanner">
+        <img src="images/innerBanner.jpg" alt="No Image">
+    </div>
+    <main>
+        <div id="SkipContent"></div>
+        <form id="form1" runat="server">
+            <div>
+                <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+                </asp:ContentPlaceHolder>
+            </div>
+        </form>
+    </main>
+    <footer id="mainFooter">
+        <div class="footer-top">
+            <div class="container">
+                <div class="col-xs-12 text-center">
+                    <div class="footerMenu">
+                        <ul id="menu-footer-en" class="menu">
+                            <li id="menu-item-738" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-738"><a href="feedback.aspx">Feedback</a></li>
+                            <li id="menu-item-737" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-737"><a href="WebsitePolicies.aspx">Website Policies</a></li>
+                            <li id="menu-item-736" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-736"><a href="Contactus.aspx">Contact Us</a></li>
+                            <li id="menu-item-735" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-735"><a href="help.aspx">Help</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xs-12 text-center">
+                        <div class="copyRights">
+                            <div class="copyRightsText">
+                                <p class="mr-none">Content Owned by <a href="http://samajkalyan.up.gov.in/en" target="_blank">Social Welfare Department, Uttar Pradesh</a></p>
+                                <p>
+                                    Developed and hosted by <a href="http://www.nic.in/" target="_blank">National Informatics Centre</a>,
+                                    <br>
+                                    <a href="http://meity.gov.in/" target="_blank">Ministry of Electronics &amp; Information Technology</a>, Government of India
+                                </p>
+                                <p>Last Updated: <strong>Jun 02, 2023</strong></p>
+                            </div>
+                            <div class="copyRightsLogos">
+                                <a href="https://s3waas.gov.in/">
+                                    <img src="images/s3waas.png" alt="Secure, Scalable and Sugamya Website as a Service"></a> 
+                                <a href="http://www.nic.in/">
+                                        <img src="images/nicLogo.png" alt="National Informatics Centre"></a> 
+                                <a href="http://samajkalyan.up.gov.in/en">
+                                    <img src="images/SWLogo (3).png" alt="समाज कल्याण विभाग लोगो"></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script>
+        jQuery(document).ready(function ($) {
+            jQuery('body').find('a.flex-pause').attr('href', "javascript:void(0)");
+            $('.flex-direction-nav a.flex-prev').attr({ 'title': 'Previous', 'aria-label': 'Previous' });
+            $('.flex-pauseplay a.flex-pause').attr({ 'title': 'Play/Pause', 'aria-label': 'Play/Pause' });
+            $('.flex-direction-nav a.flex-next').attr({ 'title': 'Next', 'aria-label': 'Next' });
+        });
+    </script>
+    <link rel="stylesheet" id="list-style-css" href="css/list-style.min.css" media="all">
+    <link rel="stylesheet" id="component-helper-css" href="css/component-helper.css" media="all">
+    <script type="text/javascript" id="jquery-common-js-js-extra">
+        /* < ![CDATA[ * /
+        var AwaasData = { "ajaxUrl": "https:\/\/s3f1981e4bd8a0d6d8462016d2fc6276b3.s3waas.gov.in\/wp-admin\/admin-ajax.php", "isUserLoggedIn": "" };
+        /* ]]> */
+    </script>
+    <script src="js/common.js" id="jquery-common-js-js"></script>
+    <script src="js/core.min.js" id="jquery-ui-core-js"></script>
+    <script src="js/datepicker.min.js" id="jquery-ui-datepicker-js"></script>
+    <script id="jquery-ui-datepicker-js-after" type="text/javascript">
+        jQuery(function (jQuery) { jQuery.datepicker.setDefaults({ "closeText": "Close", "currentText": "Today", "monthNames": ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"], "monthNamesShort": ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"], "nextText": "Next", "prevText": "Previous", "dayNames": ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"], "dayNamesShort": ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"], "dayNamesMin": ["S", "M", "T", "W", "T", "F", "S"], "dateFormat": "MM d, yy", "firstDay": 1, "isRTL": false }); });
+    </script>
+    <script src="js/jquery.flexslider.js" id="jquery-flexslider-js-js"></script>
+    <script src="js/easyResponsiveTabs.js" id="jseasyResponsiveTabs-js"></script>
+    <script src="js/jquery.fancybox.js" id="jqueryfancyboxjs-js"></script>
+    <script src="js/style.switcher.js" id="styleswitcherjs-js"></script>
+    <script src="js/menu.js" id="menujs-js"></script>
+    <script src="js/table.min.js" id="tablejs-js"></script>
+    <script src="js/custom.js" id="custom-js"></script>
+    <script src="js/extra.js" id="extrajs-js"></script>
+    <script src="js/js_composer_front.min.js" id="wpb_composer_front_js-js"></script>
+    <!--Department Instance-->
+
+</body>
+</html>
